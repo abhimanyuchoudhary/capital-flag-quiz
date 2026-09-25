@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#5b8def" />
+  <title>Capital & Flag Quiz</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+    <!-- START -->
+    <section id="screen-start" class="screen active">
+      <div class="hero">
+        <div class="hero-flags" aria-hidden="true">🌍 🏳️ 🗺️</div>
+        <h1>Capital &amp; Flag Quiz</h1>
+        <p class="tagline">Guess capitals and flags — fun for the whole family!</p>
+      </div>
+      <div class="how-to card">
+        <h2>How to play</h2>
+        <ol>
+          <li>Pick how many questions you want</li>
+          <li>Answer capital OR flag questions</li>
+          <li>Tap the right answer — keep your streak going!</li>
+        </ol>
+      </div>
+      <label class="round-picker card">
+        <span>Round length</span>
+        <select id="round-length" aria-label="Number of questions">
+          <option value="5">5 questions</option>
+          <option value="10" selected>10 questions</option>
+          <option value="15">15 questions</option>
+          <option value="20">20 questions</option>
+        </select>
+      </label>
+      <button id="btn-play" class="btn btn-primary btn-lg">Play!</button>
+    </section>
+
+    <!-- QUESTION -->
+    <section id="screen-question" class="screen" hidden>
+      <header class="game-bar">
+        <div class="progress-wrap">
+          <div id="progress-bar" class="progress-bar" style="width:0%"></div>
+        </div>
+        <div class="stats">
+          <span id="q-progress">1 / 10</span>
+          <span class="stat-pill">⭐ <span id="score">0</span></span>
+          <span class="stat-pill">🔥 <span id="streak">0</span></span>
+        </div>
+      </header>
+      <div class="question-card card">
+        <p id="q-type" class="q-type">Capital</p>
+        <div id="q-prompt" class="q-prompt"></div>
+      </div>
+      <div id="choices" class="choices" role="group" aria-label="Answer choices"></div>
+      <button id="btn-next" class="btn btn-primary btn-lg" hidden>Next →</button>
+    </section>
+
+    <!-- END -->
+    <section id="screen-end" class="screen" hidden>
+      <div class="end-hero card">
+        <div id="end-emoji" class="end-emoji" aria-hidden="true">🎉</div>
+        <h1>Round over!</h1>
+        <p id="end-message" class="tagline"></p>
+        <p class="final-score">
+          You got <strong id="final-correct">0</strong> / <strong id="final-total">0</strong>
+        </p>
+        <p class="best-streak">Best streak: <strong id="final-streak">0</strong> 🔥</p>
+      </div>
+      <button id="btn-again" class="btn btn-primary btn-lg">Play again</button>
+      <button id="btn-home" class="btn btn-ghost">Back to start</button>
+    </section>
+  </div>
+  <script src="data.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>
