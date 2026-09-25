@@ -219,9 +219,9 @@ function difficultyPool(level) {
 
 /**
  * Pick wrong answers.
- * Easy: different region and a different kind of flag, preferring familiar countries.
- * Medium: same part of the world, but not a look-alike flag.
- * Hard: look-alike flags first, then countries from the same region.
+ * Tourist: different region and a different kind of flag, preferring familiar countries.
+ * Globetrotter: same part of the world, but not a look-alike flag.
+ * Cartographer: look-alike flags first, then countries from the same region.
  */
 function pickDistractors(correct, difficulty, count) {
   const ranked = COUNTRIES.filter((c) => c.name !== correct.name).map((c) => ({
