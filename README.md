@@ -14,19 +14,22 @@ python3 -m http.server 8765
 
 Then visit `http://127.0.0.1:8765/`.
 
-## What's in v1
+## What's included
 
-- 55 countries with capitals and emoji flags
-- Interleaved capital and flag multiple-choice rounds
-- Flag picks show flags only (names revealed after you answer)
-- Score, streak, and round length 5 / 10 / 15 / 20
+- 168 countries with capitals, emoji flags, and an Easy, Medium, or Hard tier
+- Difficulty: Easy, Medium, Hard, or Random. Random picks one level for the whole round and shows it on the HUD and results
+- Easy uses well-known countries and clearer choices (distant places, flags that look less alike). Medium mixes familiarity. Hard uses less familiar countries and trickier choices (look-alike flags and nearby capitals)
+- Round lengths: 5, 10, 15, 20, 40, or 50. A round is shortened if that difficulty does not have enough countries. Hard supports 50
+- After the round, a review lists each question as right or wrong, with the correct answer and your pick when you missed it
+- Flag choices stay flag-only until you answer. Country-from-flag choices stay text
+- Leaderboard is localStorage on this device only: display name, score, difficulty, round length, and date. No account and no server
 
 ## Files
 
 - `index.html` — screens
 - `styles.css` — mobile-first UI
-- `game.js` — quiz flow
-- `data.js` — country data
+- `game.js` — quiz flow, review, and leaderboard
+- `data.js` — country data and difficulty pools
 
 ## License
 
