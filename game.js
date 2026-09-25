@@ -7,12 +7,12 @@
   const LB_STORE = 20;
   const LB_SHOW = 10;
 
-  const DIFF_NAMES = { easy: "Easy", medium: "Medium", hard: "Hard" };
+  const DIFF_NAMES = { easy: "Tourist", medium: "Globetrotter", hard: "Cartographer" };
   const DIFF_HINTS = {
     easy: "Well-known countries and clearer choices.",
     medium: "Mixed familiarity and somewhat similar choices.",
     hard: "Less familiar countries and trickier choices.",
-    random: "Picks Easy, Medium, or Hard once for the whole round.",
+    random: "Picks Tourist, Globetrotter, or Cartographer once for the whole round.",
   };
 
   const $ = (id) => document.getElementById(id);
@@ -97,7 +97,7 @@
   }
 
   function diffLabel(level, viaRandom) {
-    const name = DIFF_NAMES[level] || "Easy";
+    const name = DIFF_NAMES[level] || "Tourist";
     return viaRandom ? `${name} · Random` : name;
   }
 
@@ -129,7 +129,7 @@
       }
     } else if (requested > easyN) {
       els.lengthHint.hidden = false;
-      els.lengthHint.textContent = `Random picks one level for the whole round. Easy has ${easyN} countries, so an Easy roll plays ${easyN}.`;
+      els.lengthHint.textContent = `Random picks one level for the whole round. Tourist has ${easyN} countries, so a Tourist roll plays ${easyN}.`;
       return;
     }
     els.lengthHint.hidden = true;
